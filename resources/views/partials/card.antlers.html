@@ -2,6 +2,18 @@
     {{ hero_image }}<img src="{{ url }}" alt="{{ alt }}" class="object-cover w-full h-72 bg-hot-pink">{{ /hero_image }}
     <div class="flex flex-col justify-between flex-1 gap-4 p-6 md:gap-5 md:p-8">
         <h2 class="font-sans text-xl font-semibold md:text-2xl">{{ title }}</h2>
-        <p class="font-sans text-xs">{{ last_modified format="j. F Y" }}</p>
+        <div class="flex items-center justify-between gap-4">
+            {{ if date }}<p class="font-sans text-xs">{{ date format="j. F Y" }}</p>{{ /if }}
+            {{ author }}
+            <div class="flex items-center gap-2">
+                {{ if avatar }}
+                    <img src="{{ avatar }}" alt="{{ name }}" class="w-6 h-6 rounded-full object-cover">
+                {{ else }}
+                    <div class="flex items-center justify-center w-6 h-6 rounded-full bg-hot-pink text-white text-xs font-semibold font-sans">{{ initials }}</div>
+                {{ /if }}
+                <p class="font-sans text-xs">{{ name }}</p>
+            </div>
+            {{ /author }}
+        </div>
     </div>
 </a>

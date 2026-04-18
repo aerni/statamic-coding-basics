@@ -16,7 +16,17 @@
             <div class="flex flex-col items-center max-w-4xl gap-6 px-6 mx-auto text-center md:gap-10 md:px-16">
                 <h1 class="text-5xl leading-none uppercase font-display md:text-8xl">{{ title }}</h1>
                 <p class="font-sans text-xl leading-8 md:text-2xl md:leading-10">{{ intro }}</p>
-                <p class="font-sans text-sm md:text-base">{{ date iso_format="dddd, DD MMMM " }}</p>
+                {{ author }}
+                <div class="flex items-center justify-center gap-2">
+                    {{ if avatar }}
+                        <img src="{{ avatar }}" alt="{{ name }}" class="w-8 h-8 rounded-full object-cover">
+                    {{ else }}
+                        <div class="flex items-center justify-center w-8 h-8 rounded-full bg-hot-pink text-white text-xs font-semibold font-sans">{{ initials }}</div>
+                    {{ /if }}
+                    <p class="font-sans text-sm md:text-base">{{ name }}</p>
+                </div>
+                {{ /author }}
+                {{ if date }}<p class="font-sans text-sm md:text-base">{{ date format="j. F Y" }}</p>{{ /if }}
             </div>
         </section>
 
