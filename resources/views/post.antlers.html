@@ -1,1 +1,254 @@
 {{ title }}
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donuts – Blog</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #f8f4ee;
+            --text: #1a1a1a;
+            --muted: #777;
+            --accent: #e05aaa;
+            --radius: 14px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: var(--bg);
+            font-family: 'DM Sans', sans-serif;
+            color: var(--text);
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            padding: 24px 48px;
+        }
+
+        nav {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* HERO */
+        .hero {
+            text-align: center;
+            padding: 60px 20px 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(3rem, 7vw, 5.5rem);
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            color: #444;
+            line-height: 1.7;
+            max-width: 520px;
+            margin: 0 auto 20px;
+        }
+
+        .date {
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+
+        /* IMAGE */
+        .hero-image {
+            max-width: 820px;
+            margin: 40px auto;
+            border-radius: var(--radius);
+            overflow: hidden;
+            background: linear-gradient(135deg, #b100c9, #ff2d6f);
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* CONTENT */
+        .content {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 0 20px 40px;
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        .content p {
+            margin-bottom: 28px;
+            color: #333;
+        }
+
+        .content h2 {
+            font-size: 1.2rem;
+            margin: 40px 0 12px;
+        }
+
+        .highlight {
+            color: var(--accent);
+        }
+
+        /* ─── POST NAVIGATION ───────────────── */
+        .post-nav {
+            max-width: 900px;
+            margin: 60px auto 20px;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .nav-item {
+            text-decoration: none;
+            color: var(--text);
+            max-width: 320px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            transition: opacity 0.2s ease;
+        }
+
+        .nav-item:hover {
+            opacity: 0.6;
+        }
+
+        .nav-item .label {
+            font-size: 0.75rem;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .nav-item .title {
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .nav-item.right {
+            text-align: right;
+            align-items: flex-end;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--muted);
+            padding: 30px;
+        }
+
+        @media (max-width: 700px) {
+            header {
+                padding: 20px;
+            }
+
+            .hero-image {
+                height: 220px;
+            }
+
+            .post-nav {
+                flex-direction: column;
+                gap: 24px;
+            }
+
+            .nav-item.right {
+                align-items: flex-start;
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div>Random Thoughts</div>
+        <nav>
+            <a href="#">Blog</a>
+            <a href="#">About</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Everything is better when donuts are involved</h1>
+        <p>
+            Job interviews are painful. But with a pocketful of donuts they are never a waste of time.
+            Hate waiting at the DMV? Try pounding a dozen donuts and splattering jelly all over form 90210.
+            You're welcome.
+        </p>
+        <div class="date">15. April 2025</div>
+    </section>
+
+    <div class="hero-image"></div>
+
+    <main class="content">
+        <p>
+            Sure they're not healthy for you, but neither is the stress you carry when you spend time doing things you
+            hate.
+            All of these things are better with donuts.
+        </p>
+
+        <h2>Sugar Diplomacy</h2>
+        <p>
+            Donuts have a way of <span class="highlight">resolving conflict</span> that no formal process ever could.
+            Passive-aggressive email from accounting? Show up with a pink box and suddenly everyone is "circling back"
+            with a much better attitude.
+        </p>
+
+        <h2>Emotional Cushioning</h2>
+        <p>
+            Life insists on happening to you at full speed. Missed train. Weird text. Dentist appointment.
+            The donut does not remove these burdens, but it does place a soft, frosted barrier between you and total
+            collapse.
+        </p>
+
+        <h2>Tactical Celebration</h2>
+        <p>
+            Donuts are uniquely qualified for events that do not deserve a full cake but still require recognition.
+            They arrive, do the work, and leave a faint dusting of sugar as proof that joy briefly existed.
+        </p>
+    </main>
+
+    <!-- 👉 Navigation eingefügt -->
+    <section class="post-nav">
+        <a href="#" class="nav-item left">
+            <span class="label">← Vorheriger</span>
+            <span class="title">There's something secret and dangerous lurking in your pocket</span>
+        </a>
+
+        <a href="#" class="nav-item right">
+            <span class="label">Nächster →</span>
+            <span class="title">Would you rather give up pizza or wifi?</span>
+        </a>
+    </section>
+
+    <footer>
+        © 2026 Random Thoughts
+    </footer>
+
+</body>
+
+</html>
