@@ -1,7 +1,8 @@
 <section>
     <div class="flex flex-col items-center max-w-4xl gap-6 px-6 mx-auto text-center md:gap-10 md:px-16">
         <h1 class="text-6xl leading-none uppercase font-display md:text-8xl">{{ title }}</h1>
-        <p class="font-sans text-xl leading-8 md:text-2xl md:leading-10">{{ collection:posts :taxonomy:tags="slug" count="true" }} {{ count }} {{ /collection:posts }} Posts mit diesem Tag</p>
+        <p class="font-sans text-xl leading-8 md:text-2xl md:leading-10">{{ collection:posts :taxonomy:tags="slug" as="posts" }}{{ total_results }}{{ /collection:posts }}
+ Posts mit diesem Tag</p>
         <a href="/" class="font-sans text-sm font-semibold text-hot-pink hover:underline">&larr; Alle Posts</a>
     </div>
 </section>
