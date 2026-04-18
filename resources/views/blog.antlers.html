@@ -1,197 +1,25 @@
-<!DOCTYPE html>
-<html lang="de">
+<section>
+    <div class="flex flex-col items-center max-w-4xl gap-6 px-6 mx-auto text-center md:gap-10 md:px-16">
+        <h1 class="text-6xl leading-none uppercase font-display md:text-8xl">{{title}}</h1>
+        <p class="font-sans text-xl leading-8 md:text-2xl md:leading-10">Hier steht dann um was es überhaupt geht. Was interessiert uns eigentlich? Es ist doch alles spannend oder nicht? Ich schreibe hier einfach einen Text, damit ich da ein wenig Fleisch am Knochen habe dann kann ich da wirklich schauen wie es aussieht.</p>
+    </div>
+</section>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{ title }}</title>
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600&display=swap"
-        rel="stylesheet" />
+<section>
+    <div class="grid grid-cols-1 gap-8 px-6 mx-auto md:px-16 max-w-8xl md:grid-cols-2 xl:grid-cols-3">
+        {{ collection from="article" }}
+            <article class="{{ first ?= 'md:col-span-2' }}">
+                <a href="{{url}}"
+                    class="flex flex-col h-full overflow-hidden transition ease-out bg-white shadow-lg rounded-xl hover:-translate-y-1 hover:shadow-xl">
+                    <img src="{{ image }}" alt="" class="object-cover w-full h-72 bg-hot-pink">
+                    <div class="flex flex-col justify-between flex-1 gap-4 p-6 md:gap-5 md:p-8">
+                        <h2 class="font-sans text-xl font-semibold md:text-2xl">{{ title }}</h2>
+                        <p class="font-sans text-xs">{{ date | format('d.m.y') }}</p>
+                    </div>
+                </a>
+            </article>
+        {{ /collection }}
 
-    <!-- Tailwind -->
-    <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Alpine -->
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
-    <style>
-        :root {
-            --bg: #f8f4ee;
-            --text: #1a1a1a;
-            --muted: #888;
-            --card-bg: #ffffff;
-            --shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
-            --shadow-hover: 0 12px 32px rgba(0, 0, 0, 0.14);
-            --radius: 14px;
-        }
-
-        body {
-            background: var(--bg);
-            font-family: 'DM Sans', sans-serif;
-            color: var(--text);
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            padding: 22px 48px;
-        }
-
-        nav {
-            display: flex;
-            gap: 24px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--text);
-            font-weight: 600;
-        }
-
-        .hero {
-            text-align: center;
-            padding: 60px 20px;
-        }
-
-        .hero h1 {
-            font-family: 'Bebas Neue';
-            font-size: clamp(3rem, 8vw, 6rem);
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            padding: 40px;
-        }
-
-        .card {
-            background: white;
-            border-radius: var(--radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .card-image {
-            height: 220px;
-        }
-
-        .card-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .card-body {
-            padding: 20px;
-        }
-
-        .card-date {
-            font-size: 0.8rem;
-            color: var(--muted);
-        }
-
-        footer {
-            text-align: center;
-            padding: 60px 20px;
-            font-size: 0.8rem;
-            color: var(--muted);
-        }
-
-        .resources a {
-            display: block;
-            margin-top: 6px;
-            color: var(--muted);
-        }
-    </style>
-</head>
-
-<body>
-
-    <header>
-        <div>Random Thoughts</div>
-        <nav>
-            <a href="#">Blog</a>
-            <a href="#">About</a>
-        </nav>
-    </header>
-
-    <section class="hero">
-        <h1>Blog</h1>
-        <p>Hier steht dann der Text den ich vorhin eigentlich geschrieben habe der jetzt aber weg ist.</p>
-    </section>
-
-    <main class="grid">
-
-        <!-- Card 1 -->
-        <article class="card">
-            <div class="card-image">
-                <img src="https://picsum.photos/seed/octopus/600/400">
-            </div>
-            <div class="card-body">
-                <h2>Tintenfisch in deinem Handy</h2>
-                <p class="card-date">17. April 2025</p>
-            </div>
-        </article>
-
-        <!-- Card 2 -->
-        <article class="card">
-            <div class="card-image">
-                <img src="https://picsum.photos/seed/donut/600/400">
-            </div>
-            <div class="card-body">
-                <h2>Donut mit Sträusel</h2>
-                <p class="card-date">15. April 2025</p>
-            </div>
-        </article>
-
-        <!-- Card 3 -->
-        <article class="card">
-            <div class="card-image">
-                <img src="https://picsum.photos/seed/pizza/600/400">
-            </div>
-            <div class="card-body">
-                <h2>Pizza oder Wifi?</h2>
-                <p class="card-date">April 2025</p>
-            </div>
-        </article>
-
-        <!-- Card 4 -->
-        <article class="card">
-            <div class="card-image">
-                <img src="https://picsum.photos/seed/code/600/400">
-            </div>
-            <div class="card-body">
-                <h2>Beginnings</h2>
-                <p class="card-date">2026</p>
-            </div>
-        </article>
-
-        <!-- Card 5 -->
-        <article class="card">
-            <div class="card-image">
-                <img src="https://picsum.photos/seed/idea/600/400">
-            </div>
-            <div class="card-body">
-                <h2>Verlorene Idee</h2>
-                <p class="card-date">2026</p>
-            </div>
-        </article>
-
-    </main>
-
-    <footer>
-        <p>© 2026 Noras Random Thoughts</p>
-        </div>
-    </footer>
-
-</body>
-
-</html>
+    </div>
+</section>

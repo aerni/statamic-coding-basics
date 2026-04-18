@@ -5,4 +5,6 @@ password_hash: $2y$12$Ko/iuK5vf6RvkWZiLmgAsuFSSFXOQuRsP6HV8ikIOAXIkpDP91pYS
 preferences:
   collections:
     pages:
-      view: tree
+      view: list
+    article:
+      view: list

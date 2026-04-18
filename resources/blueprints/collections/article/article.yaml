@@ -1,4 +1,4 @@
-title: Page
+title: Article
 tabs:
   main:
     display: Main
@@ -13,26 +13,22 @@ tabs:
               validate:
                 - required
           -
-            handle: template
-            field:
-              type: template
-              display: Template
-          -
-            handle: about_SO
-            field:
-              type: text
-              display: 'Text Field'
-          -
-            handle: Image_Team
-            field:
-              container: assets
-              type: assets
-              display: Image
-          -
-            handle: text_about
+            handle: lead
             field:
               type: textarea
-              display: 'Text about'
+              display: Lead
+              instructions: 'A short description of the article.'
+              validate:
+                - required
+          -
+            handle: image
+            field:
+              container: assets
+              max_files: 1
+              type: assets
+              display: Image
+              validate:
+                - required
   sidebar:
     display: Sidebar
     sections:
