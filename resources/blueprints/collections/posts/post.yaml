@@ -26,7 +26,17 @@ tabs:
               display: Teaserbild
               container: assets
               max_files: 1
-              required: true
+          -
+            handle: teaser_video
+            field:
+              type: assets
+              display: Teaser-Video (optional)
+              container: assets
+              max_files: 1
+              extensions:
+                - mp4
+                - webm
+                - mov
           -
             handle: intro
             field:
