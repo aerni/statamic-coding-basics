@@ -8,7 +8,7 @@ links:
     id: YTj3yR0L
     type: link
     label: Instagram
-    url: 'https://instagram.com'
+    url: 'https://instagram.com/leonina_r'
     enabled: true
   -
     id: gmkwtfo6
@@ -17,5 +17,5 @@ links:
     url: 'mailto:leonina.rieder@gmail.com'
     enabled: true
 updated_by: a670f34f-921c-43cb-ab7d-afb3eece5cb7
-updated_at: 1776434572
+updated_at: 1776505111
 ---
